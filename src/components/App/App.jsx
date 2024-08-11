@@ -8,7 +8,11 @@ function App() {
     bad: 0,
   });
 
-  const total = review.good + review.neutral + review.bad;
+    const total = review.good + review.neutral + review.bad;
+    
+    const reviewAdd = (kindReview) => {
+        setReview({ ...review, [kindReview]: review[kindReview] + 1 });
+    }
 
   return (
     <div>
@@ -22,6 +26,7 @@ function App() {
         neutral={review.neutral}
         bad={review.bad}
         total={total}
+        reviewAdd={reviewAdd}
       />
     </div>
   );
