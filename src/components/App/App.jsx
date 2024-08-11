@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Feedback from "../Feedback/Feedback";
-import "./App.module.css"
+import Description from "../Description/Description";
+import Options from "../Options/Options";
+import css from "./App.module.css";
 
 function App() {
   const [feedback, setupFeedback] = useState({
@@ -30,19 +32,14 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Sip Happens Café</h1>
-      <p>
-        Please leave your feedback about our service by selecting one of the
-        options below.
-      </p>
+    <div className={css.mainContainer}>
+      <Description />
+      <Options updateFeedback={updateFeedback} onResetClick={onResetClick} />
       <Feedback
         good={feedback.good}
         neutral={feedback.neutral}
         bad={feedback.bad}
         total={totalFeedback}
-        updateFeedback={updateFeedback}
-        onResetClick={onResetClick}
         positive={positive()}
       />
     </div>

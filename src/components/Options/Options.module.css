@@ -1,0 +1,25 @@
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.options button {
+    background-color: #bbc2bb;      
+    color: #333232;
+    border: none;                
+    border-radius: 5px;            
+    padding: 10px 20px;             
+    font-size: 1rem;                
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.options button:hover {
+    background-color: #999b99;
+}
+
+.options button:active {
+    background-color: rgb(181, 187, 183)
+}

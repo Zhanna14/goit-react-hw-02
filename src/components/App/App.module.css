@@ -1,16 +1,4 @@
-.container {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  max-width: 600px;
-  margin: auto;
-  text-align: center;
-}
-
-h1 {
-  color: #333;
-}
-
-p {
-  font-size: 1.1em;
-  color: #555;
+.mainContainer {
+    max-width: 600px;
+    margin: auto;
 }

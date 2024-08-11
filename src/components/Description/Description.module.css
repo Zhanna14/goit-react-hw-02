@@ -1,0 +1,18 @@
+.description {        
+    margin: 0 auto;            
+            
+}
+
+ h1 {
+    text-align: center;
+    font-size: 2.5rem;          
+    color: #333;                
+    margin-bottom: 15px;        
+}
+
+p {
+    font-size: 1.2rem;       
+    color: #807d7d;             
+    line-height: 1.6;           
+    margin-bottom: 0;           
+}

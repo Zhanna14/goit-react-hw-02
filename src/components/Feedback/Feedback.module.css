@@ -1,35 +1,16 @@
-.feedback-buttons {
-  margin-bottom: 20px;
-}
-
-.feedback-buttons button {
-  background-color: #4CAF50; /* Green */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 5px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.feedback-buttons button:hover {
-  background-color: #45a049;
-}
-
-ul {
+.liFeedback {
+  font-size: 20px;      
+  font-weight: 500;
+  color: #333;       
+  margin: 10px 0;
+  padding: 5px 0;
   list-style: none;
+ 
+}
+.ulFeedback {
   padding: 0;
 }
-
-li {
-  font-size: 1.2em;
-  margin: 10px 0;
-}
-
-b {
-  font-size: 1.3em;
+.liFeedback:last-child {
+      
+  font-weight: bold; 
 }
