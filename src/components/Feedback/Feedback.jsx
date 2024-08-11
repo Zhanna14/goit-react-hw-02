@@ -1,3 +1,5 @@
+import "./Feedback.module.css";
+
 const Feedback = ({
   good,
   neutral,
@@ -20,7 +22,7 @@ const Feedback = ({
       </button>
       <button type="button" onClick={onResetClick}>
         Reset
-          </button>
+      </button>
       <ul>
         <li>Good: {good}</li>
         <li>Neutral: {neutral}</li>

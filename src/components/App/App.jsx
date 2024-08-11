@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Feedback from "../Feedback/Feedback";
+import "./App.module.css"
 
 function App() {
   const [feedback, setupFeedback] = useState({
@@ -8,7 +9,7 @@ function App() {
     bad: 0,
   });
 
-  const total = feedback.good + feedback.neutral + feedback.bad;
+  const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
 
   const updateFeedback = (feedbackType) => {
     setupFeedback({
@@ -22,8 +23,8 @@ function App() {
   };
 
   const positive = () => {
-    if (total > 0) {
-      return Math.round((feedback.good / total) * 100);
+    if (totalFeedback > 0) {
+      return Math.round((feedback.good / totalFeedback) * 100);
     }
     return 0;
   };
@@ -39,7 +40,7 @@ function App() {
         good={feedback.good}
         neutral={feedback.neutral}
         bad={feedback.bad}
-        total={total}
+        total={totalFeedback}
         updateFeedback={updateFeedback}
         onResetClick={onResetClick}
         positive={positive()}
