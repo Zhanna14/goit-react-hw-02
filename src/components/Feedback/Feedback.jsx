@@ -1,10 +1,26 @@
-const Feedback = ({ good, neutral, bad, total, reviewAdd }) => {
+const Feedback = ({
+  good,
+  neutral,
+  bad,
+  total,
+  updateFeedback,
+  onResetClick,
+  positive,
+}) => {
   return (
     <div>
-          <button type="button" onClick={() => reviewAdd("good")}>Good</button>
-      <button type="button" onClick={() => reviewAdd("neutral")}>Neutral</button>
-      <button type="button" onClick={() => reviewAdd("bad")}>Bad</button>
-      <button type="button">Reset</button>
+      <button type="button" onClick={() => updateFeedback("good")}>
+        Good
+      </button>
+      <button type="button" onClick={() => updateFeedback("neutral")}>
+        Neutral
+      </button>
+      <button type="button" onClick={() => updateFeedback("bad")}>
+        Bad
+      </button>
+      <button type="button" onClick={onResetClick}>
+        Reset
+          </button>
       <ul>
         <li>Good: {good}</li>
         <li>Neutral: {neutral}</li>
@@ -12,7 +28,7 @@ const Feedback = ({ good, neutral, bad, total, reviewAdd }) => {
         <li>
           <b>Total: {total}</b>
         </li>
-        <li>Positive: 0%</li>
+        <li>Positive: {positive}%</li>
       </ul>
     </div>
   );

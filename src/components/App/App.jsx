@@ -2,17 +2,31 @@ import { useState } from "react";
 import Feedback from "../Feedback/Feedback";
 
 function App() {
-  const [review, setReview] = useState({
+  const [feedback, setupFeedback] = useState({
     good: 0,
     neutral: 0,
     bad: 0,
   });
 
-    const total = review.good + review.neutral + review.bad;
-    
-    const reviewAdd = (kindReview) => {
-        setReview({ ...review, [kindReview]: review[kindReview] + 1 });
+  const total = feedback.good + feedback.neutral + feedback.bad;
+
+  const updateFeedback = (feedbackType) => {
+    setupFeedback({
+      ...feedback,
+      [feedbackType]: feedback[feedbackType] + 1,
+    });
+  };
+
+  const onResetClick = () => {
+    setupFeedback({ good: 0, neutral: 0, bad: 0 });
+  };
+
+  const positive = () => {
+    if (total > 0) {
+      return Math.round((feedback.good / total) * 100);
     }
+    return 0;
+  };
 
   return (
     <div>
@@ -22,11 +36,13 @@ function App() {
         options below.
       </p>
       <Feedback
-        good={review.good}
-        neutral={review.neutral}
-        bad={review.bad}
+        good={feedback.good}
+        neutral={feedback.neutral}
+        bad={feedback.bad}
         total={total}
-        reviewAdd={reviewAdd}
+        updateFeedback={updateFeedback}
+        onResetClick={onResetClick}
+        positive={positive()}
       />
     </div>
   );
