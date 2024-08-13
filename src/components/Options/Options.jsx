@@ -1,9 +1,6 @@
 import css from "./Options.module.css";
 
-const Options = ({
-  updateFeedback,
-  onResetClick,
-}) => {
+const Options = ({ updateFeedback, onResetClick, totalFeedback }) => {
   return (
     <section className={css.options}>
       <button type="button" onClick={() => updateFeedback("good")}>
@@ -15,9 +12,11 @@ const Options = ({
       <button type="button" onClick={() => updateFeedback("bad")}>
         Bad
       </button>
-      <button type="button" onClick={onResetClick}>
-        Reset
-      </button>
+      {totalFeedback > 0 && (
+        <button type="buton" onClick={onResetClick}>
+          Reset
+        </button>
+      )}
     </section>
   );
 };
